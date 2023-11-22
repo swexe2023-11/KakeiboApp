@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lange='ja'>
+    
+    <head>
+        <meta charset="utf-8">
+        <link href="login.css" rel="stylesheet">
+    </head>
+    
+    <body>
+    <%= form_tag 'registration/new', method: :post, data: { turbo: false } do %>
+        <%= label_tag :uid, 'ユーザーID' %>
+        <%= text_field_tag :uid %>
+        <%= label_tag :pass, 'パスワード' %>
+        <%= password_field_tag :pass %>
+        <%= submit_tag '登録' %>
+    <% end %>
+     <button onclick="history.back()">戻る</button>
+     <body>
+ </html>
