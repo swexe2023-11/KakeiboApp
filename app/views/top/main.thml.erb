@@ -1,4 +1,4 @@
-<button onclick= "location.href='./login.html.erb'">ログイン</button>
-<button onclick= "location.href='./new.html.erb'">新規登録</button>
+<%= button_to 'ログイン' ,{controller: 'registration', action: 'registration'}, {method: :get} %>>
+<%= button_to '新規登録' ,{controller: 'session', action: 'new'}, {method: :get} %>>
 <hr>
-<button onclick= "location.href='./logout.html'">ログアウト<button>
+<%= button_to 'ログアウト' , session[:login_uid] = nil %>
