@@ -1,5 +1,5 @@
  class SessionController < ActionController::Base
- def new
+ def login
          logger.debug("ログインする機能")
         @login=Login.all
         if params[:pass]==nil

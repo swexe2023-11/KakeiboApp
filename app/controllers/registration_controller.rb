@@ -1,21 +1,20 @@
 class RegistrationController < ActionController::Base
-     def new
+     def create_IP
            logger.debug("IDとパスワードを作成する機能")
         if Login.find_by(uid: params[:uid]) 
             #エラー
-            render "create_I&P"
+            render "create_IP"
         else
             #正常
             #newpass = BCrypt::Password.create(params[:pass])
            @login = Login.new(
                             uid: params[:uid],
-                            password: params[:password],
-                            password_confirmation: params[:password_confirmation])
+                            pass: params[:pass])
             if @login.save
                 #ホーム内容に表示する内容のDB
                 redirect_to "/"
             else
-                render 'create_I&P'
+                render 'create_IP'
             end
             
  
