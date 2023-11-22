@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'main/login'
+  get 'main/new'
+  get 'main/logout'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   get '/new',to: 'session#new',as: 'login'
