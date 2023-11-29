@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
-  get 'main/login'
-  get 'main/new'
-  get 'main/logout'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  post "/top_logout_path", to: 'top#top_logout_path'
+  get '/top_logout_path', to: 'top#top_logout_path'
   
-  get '/new',to: 'session#new',as: 'login'
-  post 'session/new',to: 'session#new'
+  get '/login',to: 'session#login',as: 'login'
+  post '/session/login', to: 'session#login'
+  post '/login', to: 'session#login'
   
-  get '/new',to: 'registration#new',as: 'create_IP'
-  post 'registration/new',to: 'registration#new'
+  get '/registration/create_IP',to: 'registration#create_IP',as: 'create_IP'
+  post '/registration/create_IP',to: 'registration#create_IP'
+  post '/create_IP',to: 'registration#create_IP'
   
-  get '/index',to: 'home#index'
-  root 'home#index'
+  get '/main',to: 'top#main'
+  root 'top#main'
   # Defines the root path route ("/")
   # root "articles#index"
 end

@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+<<<<<<< HEAD
   def login
   end
 
@@ -10,3 +11,7 @@ class MainController < ApplicationController
     redirect_to root_path
   end
 end
+=======
+    
+end
+>>>>>>> ed12a6bc1e3c552e980b4d7f540f608435eb042c

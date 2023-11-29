@@ -7,12 +7,12 @@
     </head>
     
     <body>
-    <%= form_tag 'registration/new', method: :post, data: { turbo: false } do %>
+    <%= form_tag 'session/login', method: :post, data: { turbo: false } do %>
         <%= label_tag :uid, 'ユーザーID' %>
         <%= text_field_tag :uid %>
         <%= label_tag :pass, 'パスワード' %>
         <%= password_field_tag :pass %>
-        <%= submit_tag '登録' %>
+        <%= submit_tag 'ログイン' %>
     <% end %>
      <button onclick="history.back()">戻る</button>
      <body>

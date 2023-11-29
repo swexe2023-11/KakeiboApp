@@ -1,0 +1,21 @@
+.Container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.Box-Container {
+    display: flex;
+    width: fit-content;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+
+.Left{
+    left: 0;
+}
+
+.Right{
+    right: 0;
+}
