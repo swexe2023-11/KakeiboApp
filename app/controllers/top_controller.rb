@@ -5,7 +5,7 @@ class TopController < ApplicationController
         logger.debug( "Top__main___NOW____HOME")
       
         #mainページ(products#main)
-        render "main"
+        render "home"
     end
     
       def top_logout_path

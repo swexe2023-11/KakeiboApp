@@ -7,7 +7,7 @@
     </head>
     
     <body>
-    <%= form_tag 'registration/new', method: :post, data: { turbo: false } do %>
+    <%= form_tag 'registration/create_IP', method: :post, data: { turbo: false } do %>
         <%= label_tag :uid, 'ユーザーID' %>
         <%= text_field_tag :uid %>
         <%= label_tag :pass, 'パスワード' %>
