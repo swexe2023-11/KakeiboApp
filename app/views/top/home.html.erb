@@ -5,11 +5,13 @@
         <link href="login.css" rel="stylesheet">
     </head>
     <body>
-     
-        <%= button_to 'ログイン' , 'login'%>>
-        <%= button_to '新規登録' , 'create_IP'%>>
+        <% if session[:login_uid]%>
+        
+        <% else%>
+            <%= button_to 'ログイン' , 'login'%>
+            <%= button_to '新規登録' , 'create_IP'%>
+        <% end%>
         <hr>
         <%= button_to 'ログアウト' , '/top_logout_path' %>
-             
      </body>
  </html>

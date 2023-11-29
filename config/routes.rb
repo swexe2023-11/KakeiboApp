@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  post "/top/top_logout_path"
-  get '/top_logout_path', to: 'top#top_logout_path', as: 'top_logout_path'
+  post "/top_logout_path", to: 'top#top_logout_path'
+  get '/top_logout_path', to: 'top#top_logout_path'
   
   get '/login',to: 'session#login',as: 'login'
   post '/session/login', to: 'session#login'

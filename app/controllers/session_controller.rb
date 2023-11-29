@@ -5,10 +5,7 @@ class SessionController < ApplicationController
   def login
     logger.debug("ログインする機能")
     @login = Login.all
-    logger.debug(@login.find(2).pass)
-     logger.debug(BCrypt::Password.create(Login.find(2).pass))
-    Login.find(2).pass=BCrypt::Password.create(Login.find(2).pass)
-    logger.debug(@login.find(2).pass)
+   
     if params[:pass].nil?
       render "login"
     else
