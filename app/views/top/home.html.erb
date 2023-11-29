@@ -5,13 +5,25 @@
         <link href="login.css" rel="stylesheet">
     </head>
     <body>
-        <% if session[:login_uid]%>
+        <p1>
+             
+            <p1_top>
+            <% if session[:login_uid]%>
+                <p1_brock>KakeiboApp   </p1_brock>
+            <% else%>
+                <h1>KakeiboApp</h1>
+                <p1_brock><%= button_to 'ログイン' , 'login'%>    </p1_brock>
+                <p1_brock><%= button_to '新規登録' , 'create_IP'%></p1_brock>
+            <% end%>
+            
+            </p1_top>
+        </p1>
+        <hr> </hr>
+        <h3>これは、KakeiboAppです。ログインID、パスワードを作成して、ログインしてください</h3>
+        <hr> </hr>
+        <p2> 
         
-        <% else%>
-            <%= button_to 'ログイン' , 'login'%>
-            <%= button_to '新規登録' , 'create_IP'%>
-        <% end%>
-        <hr>
         <%= button_to 'ログアウト' , '/top_logout_path' %>
+        </p2>
      </body>
  </html>

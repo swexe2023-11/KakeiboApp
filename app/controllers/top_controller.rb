@@ -11,6 +11,6 @@ class TopController < ApplicationController
       def top_logout_path
         logger.debug( "Top__main___NOW____top_logout_path")
         session.delete(:login_uid)
-        redirect_to "/"
+        render "home"
     end
 end
