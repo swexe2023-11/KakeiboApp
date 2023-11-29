@@ -1,0 +1,27 @@
+<header>ページ名</header>
+<hr>
+
+<div class = "Button">
+    <div class = "Button_month">
+        <%= button_to 'ALL' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '1月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '2月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '3月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '4月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '5月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '6月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '7月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '8月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '9月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '10月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '11月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '12月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+    </div>
+    <div class = "Left"><</div>
+    <div class = "Right">></div>
+</div>
+
+<hr>
+<footer>
+    <%= button_to 'ログアウト' , session[:login_uid] = nil %>
+</foooter>
