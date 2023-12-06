@@ -1,35 +1,37 @@
-<html lange='ja'>
-    
-    <head>
-        <meta charset="utf-8">
-        <link href="main.css" rel="stylesheet">
-    </head>
-        <body>
-       
-        <hr>
-            
-            <div class = "Button">
-                <div class = "Button_month">
-                    <%= button_to 'ALL' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '1月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '2月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '3月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '4月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '5月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '6月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '7月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '8月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '9月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '10月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '11月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                    <%= button_to '12月' ,{controller: 'aprication', action: ''}, {method: :get} %>
-                </div>
-                    <div class = "Left"><</div>
-                    <div class = "Right">></div>
-            </div>
-       <hr>
-       <%= button_to 'ログアウト' , '/top_logout_path' %>
-       </body>
-    
-    
+<header>ページ名</header>
+<hr>
 
+<div class = "Button">
+    <div class = "Button_month">
+        <%= button_to 'ALL' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '1月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '2月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '3月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '4月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '5月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '6月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '7月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '8月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '9月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '10月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '11月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+        <%= button_to '12月' ,{controller: 'aprication', action: ''}, {method: :get} %>
+    </div>
+    <div class = "Left"><</div>
+    <div class = "Right">></div>
+</div>
+
+<% @twee.each do |t| %>
+<div class= "ALL_Link">
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
+    <a href="リンク先のパス">_年_月</a>
+    <%= text_url_to_link(safe_join((h(t.body)).split("\n"),tag(:br))).html_safe %>
+    </div>
+<% end %>
+</div>
+
+<>
+<hr>
+<footer>
+    <%= button_to 'ログアウト' , '/top_logout_path' %>
+</foooter>
