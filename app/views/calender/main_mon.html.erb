@@ -21,13 +21,29 @@
     <div class = "Right">></div>
 </div>
 
-<% @[モデル].each do |t| %>
-<div class= "ALL_Link">
-    <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
-    <a href="リンク先のパス">_年_月</a>
-    <%= text_url_to_link(safe_join((h(t.body)).split("\n"),tag(:br))).html_safe %>
+<div class= "Calendar">
+    <table>
+      <tr>
+        <% t('date.abbr_day_names').each do |day_name| %>
+          <td>
+            <%= day_name %>
+          </td>
+        <% end %>
+      </tr>
+      <% @calendar_data.each do |date| %>
+        <% if date.wday == 0 %>
+          <tr>
+        <% end %>
+        <td>
+          <%= date.day %>
+        </td>
+        <% if date.wday == 6 %>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+    <p><%= @today.strftime("< %m / %Y >") %></p>
     </div>
-<% end %>
 </div>
 
 <>
