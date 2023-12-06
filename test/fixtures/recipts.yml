@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  day: 2023-12-06
+  pay: 1
+  kind: MyString
+  img: MyString
+
+two:
+  uid: MyString
+  day: 2023-12-06
+  pay: 1
+  kind: MyString
+  img: MyString

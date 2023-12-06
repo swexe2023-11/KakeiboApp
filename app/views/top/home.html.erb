@@ -20,6 +20,11 @@
         </p1>
         <hr> </hr>
         <h3>これは、KakeiboAppです。ログインID、パスワードを作成して、ログインしてください</h3>
+        <% if session[:login_uid]%>
+        <% else%>
+        <p><%= button_to 'メインへ' , '/main' %></p>
+        <% end%>
+      
         <hr> </hr>
         <p2> 
         

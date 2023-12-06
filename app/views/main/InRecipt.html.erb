@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lange='ja'>
+    
+    <head>
+        <meta charset="utf-8">
+        <link href="main.css" rel="stylesheet">
+    </head>
+        <body>
+            <%= form_tag 'Recipt', method: :post, data: { turbo: false } do %>
+            <fieldset>
+            <legend>レシート情報入力</legend>
+            <p><label>日付：<input type="date" name="day"></label></p>
+            <p><label>収支:<input type="number" name="pay" >円</label></p>
+            <p><label>種類:<input type="text" name="kind"></label></p>
+            <title>画像をドラッグしてアップロード</title>
+              <style>
+                #drop-area {
+                  border: 2px dashed #ccc;
+                  border-radius: 8px;
+                  padding: 20px;
+                  text-align: center;
+                  margin: 50px auto;
+                  width: 300px;
+                }
+            
+                #preview {
+                  margin-top: 20px;
+                }
+              </style>
+            </head>
+            <body>
+            
+            <div id="drop-area" ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
+              <p>画像をここにドラッグしてください</p>
+              <input type="file" id="fileInput" style="display: none" onchange="handleFiles(this.files)">
+              <div id="preview"></div>
+              
+            </div>
+            <input type="submit" value="アップロード">
+            <script>
+              function handleDragOver(event) {
+                event.preventDefault();
+                event.dataTransfer.dropEffect = 'copy';
+              }
+            
+              function handleDrop(event) {
+                event.preventDefault();
+                const files = event.dataTransfer.files;
+                handleFiles(files);
+              }
+            
+              function handleFiles(files) {
+                const dropArea = document.getElementById('drop-area');
+                const preview = document.getElementById('preview');
+                
+                // アップロードされた画像を表示
+                for (const file of files) {
+                  if (file.type.startsWith('image/')) {
+                    const img = document.createElement('img');
+                    img.file = file;
+                    img.width = 100; // 画像の幅を調整
+                    preview.appendChild(img);
+            
+                    const reader = new FileReader();
+                    reader.onload = (function (aImg) {
+                      return function (e) {
+                        aImg.src = e.target.result;
+                      };
+                    })(img);
+                    reader.readAsDataURL(file);
+                  }
+                }
+              }
+            </script>
+            <%= submit_tag '登録' %>
+            </fieldset>
+            <% end %>
+        </body>
+    
+    
+
