@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_22_063235) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_06_073612) do
   create_table "logins", force: :cascade do |t|
     t.string "uid"
     t.string "pass"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipts", force: :cascade do |t|
+    t.string "uid"
+    t.date "day"
+    t.integer "pay"
+    t.string "kind"
+    t.string "img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
