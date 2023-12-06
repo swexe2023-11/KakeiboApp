@@ -1,0 +1,53 @@
+<header>ページ名</header>
+<hr>
+
+<div class = "Button">
+    <div class = "Button_month">
+        <%= button_to 'ALL' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '1月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '2月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '3月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '4月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '5月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '6月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '7月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '8月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '9月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '10月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '11月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+        <%= button_to '12月' ,{controller: 'calender', action: 'index'}, {method: :get} %><nobr>
+    </div>
+    <div class = "Left"><</div>
+    <div class = "Right">></div>
+</div>
+
+<div class= "Calendar">
+    <table>
+      <tr>
+        <% t('date.abbr_day_names').each do |day_name| %>
+          <td>
+            <%= day_name %>
+          </td>
+        <% end %>
+      </tr>
+      <% @calendar_data.each do |date| %>
+        <% if date.wday == 0 %>
+          <tr>
+        <% end %>
+        <td>
+          <%= date.day %>
+        </td>
+        <% if date.wday == 6 %>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+    <p><%= @today.strftime("< %m / %Y >") %></p>
+    </div>
+</div>
+
+<>
+<hr>
+<footer>
+    <%= button_to 'ログアウト' , '/top_logout_path' %>
+</foooter>
