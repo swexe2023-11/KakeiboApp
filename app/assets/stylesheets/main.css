@@ -6,4 +6,17 @@ A1{
 iframe{
      width: 400px;
     height: 500px;
+    float:right;
+}
+button{
+    width: 100px;
+    height: 50px;
+}
+header_bt{
+     float:left;
+}
+main_day{
+    width: 400px;
+    height: 500px;
+    
 }

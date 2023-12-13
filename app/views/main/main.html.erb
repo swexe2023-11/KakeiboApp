@@ -2,31 +2,31 @@
 <html lang='ja'>
 <head>
   <meta charset="utf-8">
-  <link href="login.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
 </head>
 <body>
   <hr>
   <p>ページ名 </p>
   <div class="Button">
     <div class="Button_month">
-      <%= button_to 'ALL' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '1月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '2月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '3月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '4月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '5月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '6月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '7月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '8月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '9月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '10月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '11月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
-      <%= button_to '12月' ,{controller: 'calender', action: 'index'}, {method: :get} %>
+           <header_bt><%= button_to 'ALL' ,{controller: 'main', action: 'all'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '1月' ,{controller: 'main', action: 'm1'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '2月' ,{controller: 'main', action: 'm2'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '3月' ,{controller: 'main', action: 'm3'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '4月' ,{controller: 'main', action: 'm4'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '5月' ,{controller: 'main', action: 'm5'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '6月' ,{controller: 'main', action: 'm6'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '7月' ,{controller: 'main', action: 'm7'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '8月' ,{controller: 'main', action: 'm8'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '9月' ,{controller: 'main', action: 'm9'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '10月' ,{controller: 'main', action: 'm10'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '11月' ,{controller: 'main', action: 'm11'}, {method: :get} %></header_bt>
+                <header_bt><%= button_to '12月' ,{controller: 'main', action: 'm12'}, {method: :get} %></header_bt>
     </div>
     <div class="Left"><</div>
     <div class="Right">></div>
   </div>
-  <% Recipt.all.each do |t| %>
+  <% @Recipt.each do |t| %>
       <% if session[:login_uid] == t.uid %>
             <div class="ALL_Link">
               <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
