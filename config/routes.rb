@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'calender#index'
+ 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   post "/InRecipt",to: 'main#InRecipt'
