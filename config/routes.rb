@@ -1,7 +1,22 @@
 Rails.application.routes.draw do
-  
-  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
+  get 'main/m12', to: 'main#m12'
+  get 'main/m11', to: 'main#m11'
+  get 'main/m10', to: 'main#m10'
+  get 'main/m9', to: 'main#m9'
+  get 'main/m8', to: 'main#m8'
+  get 'main/m7', to: 'main#m7'
+  get 'main/m6', to: 'main#m6'
+  get 'main/m5', to: 'main#m5'
+  get 'main/m4', to: 'main#m4'
+  get 'main/m3', to: 'main#m3'
+  get 'main/m2', to: 'main#m2'
+  get 'main/m1', to: 'main#m1'
+  get 'main/all', to: 'main#all'
+  
+  get "/main_day", to: 'main#main_day'
+  
   post "/InRecipt",to: 'main#InRecipt'
   get "/InRecipt",to: 'main#InRecipt'
   post "/Recipt", to: "recipt#create"

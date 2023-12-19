@@ -32,14 +32,14 @@
     <hr>
     
   <main_day>
-      日付&emsp;&emsp;&emsp;&emsp;<%= (safe_join((h(Recipt.all.find(3).day)).split("\n"), tag(:br)))%>
-      <% Recipt.where(day: "#{Recipt.all.find(3).day}").each do |t| %>
-          <% if session[:login_uid] != t.uid %>
-               
+      <div >日付&emsp;<%= params[:kind]%></div>
+      <% Recipt.where(day: params[:kind]).each do |t| %>
+            <% if session[:login_uid] != t.uid %>
+           
                <hr>
-               <%= (safe_join((h(t.kind)).split("\n"), tag(:br)))%>&emsp;&emsp;｜<%= (safe_join((h(t.pay)).split("\n"), tag(:br)))%>円
+               <%= (safe_join((h(t.kind)).split("\n"), tag(:br)))%>&emsp;｜<%= (safe_join((h(t.pay)).split("\n"), tag(:br)).html_safe)%>円
                <hr>
-               <%= (safe_join((h(t.img)).split("\n"), tag(:br)))%>
+               <%= (safe_join((h(t.img)).split("\n"), tag(:br)).html_safe)%>
             <% end %>
         <% end %>
     </main_day>
