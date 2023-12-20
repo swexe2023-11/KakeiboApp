@@ -32,15 +32,18 @@
       <% if session[:login_uid] == t.uid %>
             <div class="ALL_Link">
               <div style="padding: 10px; margin-bottom: 10px; margin-right: 1000px; border: 1px solid #333333; background-color: #ffff99;">
+                  <% params[:pay]=(params[:pay].to_i)+t.pay.to_i%>
 
-                  <a href="/main_day?kind=<%= safe_join((h(t.day)).split("\n"), tag(:br)) %>"><%= t.kind %></a>
-                  <%= text_url_to_link(safe_join((h(t.day)).split("\n"), tag(:br))).html_safe %>
+                  <a href="/main_day?kind=<%= safe_join((h(t.day)).split("\n"), tag(:br)) %>"><%= t.day %></a>
+                  <%= text_url_to_link(safe_join((h(t.kind)).split("\n"), tag(:br))).html_safe %>
                 
               </div>
             </div>
         <% end %>
     <% end %>
-    <%   %>
+    <hr>
+    <div>総計&emsp;<%= (safe_join((h(params[:pay])).split("\n"), tag(:br)).html_safe)%>円</div>
+    <hr>
     <hr>
     <footer>
       <%= button_to 'ログアウト' , '/top_logout_path' %>

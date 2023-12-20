@@ -43,14 +43,16 @@
                    <%= (safe_join((h(t.kind)).split("\n"), tag(:br)))%>
                <% end %>
                &emsp;｜<%= (safe_join((h(t.pay)).split("\n"), tag(:br)).html_safe)%>円
-               <hr>
+             
                <%= (safe_join((h(t.img)).split("\n"), tag(:br)).html_safe)%>
-               <% params[:pay]=t.pay  %>
+               <% params[:pay]=(params[:pay].to_i)+t.pay.to_i%>
+               
             <% end %>
         <% end %>
     </main_day>
     <hr>
-    <div>総計<%= (safe_join((h(params[:pay])).split("\n"), tag(:br)).html_safe)%>円</div>
+    <hr>
+    <div>総計&emsp;<%= (safe_join((h(params[:pay])).split("\n"), tag(:br)).html_safe)%>円</div>
     <hr>
     <footer>
       <%= button_to 'ログアウト' , '/top_logout_path' %>
