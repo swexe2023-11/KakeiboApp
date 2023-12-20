@@ -5,6 +5,15 @@ class MainController < ApplicationController
   @Recipt=Recipt.all
   params[:pay] ||= 0
   
+  logger.debagu("MainController_main")
+ end
+ 
+ def main_mon
+  @today = Date.today
+  from_date = Date.new(@today.year, @today.month, @today.beginning_of_month.day).beginning_of_week(:sunday)
+  to_date = Date.new(@today.year, @today.month, @today.end_of_month.day).end_of_week(:sunday)
+  @calendar_data = from_date.upto(to_date)
+
  end
  
  def InRecipt
