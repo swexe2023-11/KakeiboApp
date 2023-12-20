@@ -34,7 +34,7 @@
   <main_day>
       <div >日付&emsp;<%= params[:kind]%></div>
       <% Recipt.where(day: params[:kind]).each do |t| %>
-            <% if session[:login_uid] != t.uid %>
+            <% if session[:login_uid] == t.uid %>
            
                <hr>
                <%= (safe_join((h(t.kind)).split("\n"), tag(:br)))%>&emsp;｜<%= (safe_join((h(t.pay)).split("\n"), tag(:br)).html_safe)%>円

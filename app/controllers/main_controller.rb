@@ -1,14 +1,15 @@
 class MainController < ApplicationController
 
+
+ def main
+  @Recipt=Recipt.all
+  
+ end
  def InRecipt
   #レシート入力欄を開く
    render 'InRecipt'
  end
  
- 
-  def main
-  @Recipt=Recipt.all
- end
  
  def all
   @Recipt=Recipt.all

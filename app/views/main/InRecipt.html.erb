@@ -4,16 +4,7 @@
     <head>
         <meta charset="utf-8">
         <link href="main.css" rel="stylesheet">
-    </head>
-        <body>
-            <%= form_tag 'Recipt', method: :post, data: { turbo: false } do %>
-            <fieldset>
-            <legend>レシート情報入力</legend>
-            <p><label>日付：<input type="date" name="day"></label></p>
-            <p><label>収支:<input type="number" name="pay" >円</label></p>
-            <p><label>種類:<input type="text" name="kind"></label></p>
-            <title>画像をドラッグしてアップロード</title>
-              <style>
+         <style>
                 #drop-area {
                   border: 2px dashed #ccc;
                   border-radius: 8px;
@@ -27,8 +18,18 @@
                   margin-top: 20px;
                 }
               </style>
-            </head>
-            <body>
+        
+    </head>
+        <body>
+            <%= form_tag 'Recipt', method: :post, data: { turbo: false } do %>
+            <fieldset>
+            <legend>レシート情報入力</legend>
+            <p><label>日付：<input type="date" name="day"></label></p>
+            <p><label>収支:<input type="number" name="pay" >円</label></p>
+            <p><label>種類:<input type="text" name="kind"></label></p>
+            <title>画像をドラッグしてアップロード</title>
+             
+            
             
             <div id="drop-area" ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
               <p>画像をここにドラッグしてください</p>

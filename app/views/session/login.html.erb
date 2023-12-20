@@ -13,6 +13,7 @@
         <%= label_tag :pass, 'パスワード' %>
         <%= password_field_tag :pass %>
         <%= submit_tag 'ログイン' %>
+        <% @Recipt=Recipt.all %>
     <% end %>
      <button onclick="history.back()">戻る</button>
      <body>

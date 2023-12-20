@@ -6,30 +6,33 @@
         <link href="login.css" rel="stylesheet">
     </head>
     <body>
-        <p1>
+    <br>
+        <div class=p1>
              
-            <p1_top>
+      
             <% if session[:login_uid]%>
-                <p1_brock>KakeiboApp   </p1_brock>
+                <br><h1> KakeiboApp  </h1></br>
             <% else%>
-                <h1>KakeiboApp</h1>
-                <p1_brock><%= button_to 'ログイン' , 'login'%>    </p1_brock>
-                <p1_brock><%= button_to '新規登録' , 'create_IP'%></p1_brock>
+                <br><h1>KakeiboApp</h1></br>
+                <br><div class=p1_brock><%= button_to 'ログイン' , 'login', class: "button" %>    </div>
+                    <div class=p1_brock><%= button_to '新規登録' , 'create_IP', class: "button" %></div></br>
             <% end%>
             
-            </p1_top>
-        </p1>
+          
+        </div>
+    </br>
+    <br> </br>
         <hr> </hr>
         <h3>これは、KakeiboAppです。ログインID、パスワードを作成して、ログインしてください</h3>
-        <% if session[:login_uid]%>
-        <% else%>
-        <p><%= button_to 'メインへ' , '/main' %></p>
-        <% end%>
-      
         <hr> </hr>
-        <p2> 
+        <% if session[:login_uid]%>
+        <p><%= button_to 'メインへ' , '/main' %></p>
+        <% else%>
         
-        <%= button_to 'ログアウト' , '/top_logout_path' %>
-        </p2>
+        <% end%>
+        <hr> </hr>
+        <div class=p2> 
+            <%= button_to 'ログアウト' , '/top_logout_path', class: "button" %>
+        </div>
      </body>
  </html>

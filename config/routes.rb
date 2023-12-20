@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/top_logout_path', to: 'top#top_logout_path'
   
   get '/login',to: 'session#login',as: 'login'
+  post 'session/session/login', to: 'session#login'
   post '/session/login', to: 'session#login'
   post '/login', to: 'session#login'
   

@@ -12,6 +12,7 @@ class SessionController < ApplicationController
       if (user = Login.find_by(uid: params[:uid])) && BCrypt::Password.new(user.pass) == params[:pass]
         session[:login_uid] = params[:uid]
         logger.debug("login_go")
+        @Recipt=Recipt.all
         render 'main/main'
       else
         render "login"
