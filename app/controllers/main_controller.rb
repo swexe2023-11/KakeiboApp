@@ -3,6 +3,7 @@ class MainController < ApplicationController
 
  def main
   @Recipt=Recipt.all
+  params[:pay] = 0
   
  end
  def InRecipt
