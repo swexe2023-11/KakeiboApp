@@ -25,7 +25,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: test_render_tkyb
-  username: test_render_tkyb_user
+  database: db_2111140049t
+  username: db_2111140049t_user
   password: <%= ENV['1MAVXG9YrglwIK65io2tAOgQySqlkF2u'] %>
   url: <%= ENV['postgres://db_2111140049_user:1MAVXG9YrglwIK65io2tAOgQySqlkF2u@dpg-ckej7ettj22c73ev7ppg-a/db_2111140049'] %>
