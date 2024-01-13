@@ -27,5 +27,5 @@ production:
   pool: 5
   database: test_render_tkyb
   username: test_render_tkyb_user
-  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  password: <%= ENV['1MAVXG9YrglwIK65io2tAOgQySqlkF2u'] %>
+  url: <%= ENV['postgres://db_2111140049_user:1MAVXG9YrglwIK65io2tAOgQySqlkF2u@dpg-ckej7ettj22c73ev7ppg-a/db_2111140049'] %>
