@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'main/all', to: 'main#all'
   
   get "/main_day", to: 'main#main_day'
+  get "/main_mon", to: "main#main_mon"
   post "/main/month", to: "main#main_mon"
   
   post "/InRecipt",to: 'main#InRecipt'

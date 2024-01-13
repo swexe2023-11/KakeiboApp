@@ -5,7 +5,6 @@ class MainController < ApplicationController
   @Recipt=Recipt.all
   params[:pay] ||= 0
   
-  logger.debagu("MainController_main")
  end
  
  def main_mon

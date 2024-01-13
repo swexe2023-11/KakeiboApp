@@ -23,10 +23,10 @@
                 <header_bt><%= button_to '11月' ,{controller: 'main', action: 'm11'}, {method: :get} %></header_bt>
                 <header_bt><%= button_to '12月' ,{controller: 'main', action: 'm12'}, {method: :get} %></header_bt>
     </div>
-    <div class="Left"><</div>
-    <div class="Right">></div>
+    
   </div>
   <p><iframe src="/InRecipt"></iframe></p>
+    <p><iframe src="/main_mon"></iframe></p>
   <hr>
   <% @Recipt.each do |t| %>
       <% if session[:login_uid] == t.uid %>
